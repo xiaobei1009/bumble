@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+        <groupId>org.bumble</groupId>
+        <artifactId>bumble-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>bumble-registry-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>bumble-registry-api</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+	    	<groupId>${project.groupId}</groupId>
+	    	<artifactId>bumble-base</artifactId>
+	    </dependency>
+	    <dependency>
+	    	<groupId>${project.groupId}</groupId>
+	    	<artifactId>bumble-config-api</artifactId>
+	    </dependency>
+	</dependencies>
+</project>

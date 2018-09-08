@@ -1,0 +1,1 @@
+nohup ./startup-8087-8088.sh

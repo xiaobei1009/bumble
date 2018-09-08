@@ -1,0 +1,91 @@
+# 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
+#   测试环境：java -jar my-spring-boot.jar --spring.profiles.active=test
+#   生产环境：java -jar my-spring-boot.jar --spring.profiles.active=prod
+spring:
+  application:
+    name: demo2
+  profiles:
+    active: dev
+  datasource:
+    name: test
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunMillis: 300000
+    validationQuery: select '1'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+  type-aliases-pakage: org.bumble.demo.domain
+  
+server:
+  port: 8083
+
+ribbon:  
+  ReadTimeout: 60000  
+  ConnectTimeout: 60000
+  
+info:
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+    
+#8761
+eureka:
+  instance:
+    appname: demo2
+    hostname: 10.18.5.110
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://10.1.44.150:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+  
+---
+# 测试环境配置
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+  
+---
+# 生产环境配置
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+  
+    
+# 中间用---隔开
+#
+#
+# 比如在UnitTest中，加入：
+#
+# @ActiveProfiles("dev")
+# 即可使用dev的配置。
+#
+# 也可以在运行jar的时候加入
+#
+# -Dspring.profiles.active=release
+

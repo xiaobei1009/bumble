@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.bumble</groupId>
+	<artifactId>bumble-all</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>bumble</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<modules>
+		<module>bumble-base</module>
+		<module>bumble-config-api</module>
+		<module>bumble-registry-api</module>
+		<module>bumble-store-api</module>
+		<module>bumble-core</module>
+		<module>bumble-config-zookeeper</module>
+		<module>bumble-registry-zookeeper</module>
+		<module>bumble-store-redis</module>
+		<module>bumble-manager</module>
+		<module>bumble-admin</module>
+		
+		<!-- Client -->
+		<module>bumble-client</module>
+		<module>bumble-springcloud-client</module>
+		
+		<!-- Demo -->
+		<module>bumble-eureka-server</module>
+		<module>bumble-springcloud-demo1</module>
+		<module>bumble-springcloud-demo2</module>
+	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-base</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-config-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+		    	<groupId>${project.groupId}</groupId>
+		    	<artifactId>bumble-registry-api</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>${project.groupId}</groupId>
+		    	<artifactId>bumble-core</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>${project.groupId}</groupId>
+		    	<artifactId>bumble-store-api</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-config-zookeeper</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-registry-zookeeper</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-store-redis</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-manager</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-springcloud-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<packaging>pom</packaging>
+</project>

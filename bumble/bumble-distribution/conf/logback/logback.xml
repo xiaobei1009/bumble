@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 可以在web.xml中配置org.bumble.demo.listener.LogbackConfigListener来初始化日志系统 -->
+<!-- 可以在引用该synin-base这个jar包的war工程的resources目录下放置一个同名文件来覆盖默认配置 -->
+
+<!-- 级别从高到低：OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL -->
+<!-- 日志输出规则：根据当前Root基本，日志输出时级别高于默认级别时则会输出 -->
+<!-- 每个配置的filter是过滤掉输出文件里面高于本级别的日志 -->
+<!-- scan属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值是true -->
+<!-- scanPeriod属性设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。默认值是1分钟 -->
+<!-- debug属性设置为true时，将打印出logback的内部日志，实时查看logback的运行状态，默认为false -->
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	<property name="LOG_HOME" value="${log.path.root}" />
+	
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 日志输出编码 -->
+		<Encoding>UTF-8</Encoding>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+	</appender>
+	
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_HOME}/trace/trace.log</file>
+		<rollingPolicy name="file" class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/trace/trace.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+		<!-- 文件中的日志级别是 DEBUG以上的级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>TRACE</level>
+		</filter>
+	</appender>
+	
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_HOME}/debug/debug.log</file>
+		<rollingPolicy name="file" class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/debug/debug.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+		<!-- 文件中的日志级别是 DEBUG以上的级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+	</appender>
+	
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_HOME}/info.log</file>
+		<rollingPolicy name="file" class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/info.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+		<!-- 文件中的日志级别是 INFO以上的级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_HOME}/warn/warn.log</file>
+		<rollingPolicy name="file" class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/warn/warn.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+		<!-- 文件中的日志级别是 WARN以上的级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+	</appender>
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>UTF-8</Encoding>
+		<file>${LOG_HOME}/error/error.log</file>
+		<rollingPolicy name="file" class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/error/error.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50}输出日志的类 %msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</layout>
+		<!-- 文件中的日志级别是 ERROR以上的级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+	</appender>
+
+	<!-- 具体指明包的日志级别，它会覆盖root的输出级别 -->
+	<logger name="org.bumble" level="INFO" />
+	<logger name="org.apache.zookeeper" level="ERROR" />
+	<logger name="org.I0Itec.zkclient" level="ERROR" />
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="redis.clients.jedis" level="ERROR" />
+	<logger name="org.bumble.manager.redis" level="ERROR" />
+	
+	<logger name="redis.clients" level="INFO" />
+	<logger name="org.bumble.core.action.impl.mngr.HeartReqActionService" level="INFO" />
+	<logger name="org.bumble.core.action.impl.HeartRespActionService" level="INFO" />
+	<logger name="org.bumble.core.action.impl" level="DEBUG" />
+	<logger name="org.bumble.manager.txn" level="DEBUG" />
+	
+	<!-- 日志输出级别 -->
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE_ERROR" />
+	</root>
+	<root level="WARN">
+		<appender-ref ref="FILE_WARN" />
+	</root>
+	<root level="INFO">
+		<appender-ref ref="FILE_INFO" />
+	</root>
+	<root level="DEBUG">
+		<appender-ref ref="FILE_DEBUG" />
+	</root>
+	<root level="TRACE">
+		<appender-ref ref="FILE_TRACE" />
+	</root>
+</configuration>

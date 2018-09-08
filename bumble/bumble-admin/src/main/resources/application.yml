@@ -1,0 +1,35 @@
+# 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
+#   测试环境：java -jar my-spring-boot.jar --spring.profiles.active=test
+#   生产环境：java -jar my-spring-boot.jar --spring.profiles.active=prod
+spring:
+  application: @project.name@
+  profiles:
+    active: dev
+      
+server:
+  port: 8084
+
+info:
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+    
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  
+# 中间用---隔开
+#
+#
+# 比如在UnitTest中，加入：
+#
+# @ActiveProfiles("dev")
+# 即可使用dev的配置。
+#
+# 也可以在运行jar的时候加入
+#
+# -Dspring.profiles.active=release
+

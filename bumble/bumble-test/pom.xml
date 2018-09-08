@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+        <groupId>org.bumble</groupId>
+        <artifactId>bumble-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>bumble-test</artifactId>
+	<packaging>jar</packaging>
+
+	<name>bumble-test</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>bumble-base</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpcore</artifactId>
+		    <version>4.4.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>${project.groupId}</groupId>
+		    <artifactId>bumble-store-redis</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>${project.groupId}</groupId>
+		    <artifactId>bumble-config-zookeeper</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib-nodep</artifactId>
+		    <version>2.1_3</version>
+		</dependency>
+	</dependencies>
+</project>

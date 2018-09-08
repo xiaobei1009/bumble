@@ -1,11 +1,11 @@
-#Bumble
+# Bumble
 [![GitHub release](https://img.shields.io/badge/release-download-orange.svg)](README.md)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-#Introduction 
+# Introduction 
 Bumble is a distributed platform resolving data consistency for micro-service based on 2PC mechanism.
 
-#Getting Started
+# Getting Started
 This start guide is a detailed instruction of setting up Bumble system on your local machine.
 1.	Install jdk1.8+ & enviroment settings
 2.	Install maven3.5.3+ & enviroment settings
@@ -27,7 +27,7 @@ This start guide is a detailed instruction of setting up Bumble system on your l
 18. Navigate to http://localhost:8082/demo/hello to trigger demo transaction
 19.	Check the result in the heidisql mysql client
 
-#Demo Ports
+# Demo Ports
 ```js
 {
 	"redis": {

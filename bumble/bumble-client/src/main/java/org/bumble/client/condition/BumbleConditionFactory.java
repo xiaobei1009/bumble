@@ -15,7 +15,7 @@ public class BumbleConditionFactory {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private static BumbleConditionFactory instance = null;
+	private volatile static BumbleConditionFactory instance = null;
 	
 	private int threadConditionAwaitTimeout = 0;
 	

@@ -56,14 +56,24 @@ public class RedisStoreService implements IStoreService {
 		if (jedisPool != null) {
 			jedisPool.close();
 		}
-		jedisPool = new JedisSentinelPool(redisMaster, hostSet, poolConfig, 2000, null, 1, null);
+		try {
+			jedisPool = new JedisSentinelPool(redisMaster, hostSet, poolConfig, 2000, null, 1, null);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
 	}
 	
 	public void set(String key, String value) {
+		if (jedisPool == null) {
+			return;
+		}
 		jedisPool.getResource().set(key, value);
 	}
 
 	public String get(String key) {
+		if (jedisPool == null) {
+			return null;
+		}
 		return jedisPool.getResource().get(key);
 	}
 

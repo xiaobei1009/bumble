@@ -32,7 +32,7 @@ public class BumbleConnectionCloseProcessor {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private static BumbleConnectionCloseProcessor instance = null;
+	private volatile static BumbleConnectionCloseProcessor instance = null;
 	public static BumbleConnectionCloseProcessor getInstance() {
 		if (instance == null) {
 			instance = new BumbleConnectionCloseProcessor();

@@ -26,7 +26,6 @@ public class BumbleManager {
 	public void init(String[] args) {
 		// Override configuration
     	LocalConfigHolder.getInstance().overrideByArgs(args);
-    	
     	logInitializer = new LogInitializer();
     	
     	logInitializer.init();

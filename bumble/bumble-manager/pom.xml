@@ -39,5 +39,21 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>bumble-store-api</artifactId>
 		</dependency>
+		
+		<dependency>
+             <groupId>${project.groupId}</groupId>
+             <artifactId>bumble-config-zookeeper</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>${project.groupId}</groupId>
+             <artifactId>bumble-registry-zookeeper</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>${project.groupId}</groupId>
+             <artifactId>bumble-store-redis</artifactId>
+             <scope>provided</scope>
+         </dependency>
 	</dependencies>
 </project>

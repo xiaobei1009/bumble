@@ -8,7 +8,7 @@
     |______/ \___ /_|   |_|______/|_______|______|     .        
 ================================================================
   :: Bumble Transaction Manager ::
-  v.{{version}}
+  v.@project.version@
   
   Bumble Manager Started on port[{{port}}]
   Instance Name: {{name}}

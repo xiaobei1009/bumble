@@ -50,7 +50,7 @@ public class BumbleConst {
 	 * Lock Condition id sent from client to manager, and after manager logic
 	 * processed the manager will send response message with this condition id
 	 * to the client, at this stage the client will notify the awaiting thread
-	 * to continue the flowing logic
+	 * to continue the following logic
 	 * </pre>
 	 */
 	public final static String RESP_CONDITION_ID = "respConditionId";

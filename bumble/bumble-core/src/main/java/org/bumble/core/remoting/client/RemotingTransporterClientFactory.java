@@ -12,7 +12,7 @@ import org.bumble.core.thread.ThreadExecutorGenerator;
 
 public class RemotingTransporterClientFactory {
 	
-	private volatile static RemotingTransporterClientFactory instance = null;
+	private static RemotingTransporterClientFactory instance = null;
 	public static RemotingTransporterClientFactory getInstance() {
 		if (instance == null) {
 			instance = new RemotingTransporterClientFactory();

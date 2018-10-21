@@ -18,7 +18,7 @@ public class RemotingTransporterFactory4BClient
 	extends AbstractRemotingTransporterFactory 
 	implements IRemotingTransporterFactory4BClient {
 	
-	private volatile static RemotingTransporterFactory4BClient instance = null;
+	private static RemotingTransporterFactory4BClient instance = null;
 	
 	public static RemotingTransporterFactory4BClient getInstance() {
 		if (instance == null) {

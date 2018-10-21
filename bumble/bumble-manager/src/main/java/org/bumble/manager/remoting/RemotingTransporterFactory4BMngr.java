@@ -30,7 +30,7 @@ import org.bumble.registry.data.RegistryData;
 public class RemotingTransporterFactory4BMngr extends AbstractRemotingTransporterFactory 
 	implements IRemotingTransporterFactory4BMngr, WorkNeedToShutdown {
 
-	private volatile static RemotingTransporterFactory4BMngr instance = null;
+	private static RemotingTransporterFactory4BMngr instance = null;
 	
 	public static RemotingTransporterFactory4BMngr getInstance() {
 		if (instance == null) {

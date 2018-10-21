@@ -22,7 +22,7 @@ public class ActionServiceFactory {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private volatile static ActionServiceFactory instance = null;
+	private static ActionServiceFactory instance = null;
 	
 	public static ActionServiceFactory getInstance() {
 		if (instance == null) {

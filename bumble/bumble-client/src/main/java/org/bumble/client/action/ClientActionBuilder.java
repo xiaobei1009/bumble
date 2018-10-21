@@ -6,7 +6,7 @@ import org.bumble.core.BumbleConst;
 import org.bumble.core.action.Action;
 
 public class ClientActionBuilder {
-	private volatile static ClientActionBuilder instance = null;
+	private static ClientActionBuilder instance = null;
 	public static ClientActionBuilder getInstance() {
 		if (instance == null) {
 			instance = new ClientActionBuilder();

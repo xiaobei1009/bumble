@@ -3,7 +3,7 @@ package org.bumble.store;
 import org.bumble.base.util.ReflectUtil;
 
 public class StoreServiceFactory {
-	private volatile static StoreServiceFactory instance = null;
+	private static StoreServiceFactory instance = null;
 	public StoreServiceFactory getInstance() {
 		if (instance == null) {
 			instance = new StoreServiceFactory();

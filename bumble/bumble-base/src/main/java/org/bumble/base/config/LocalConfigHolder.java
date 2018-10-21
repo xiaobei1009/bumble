@@ -15,7 +15,7 @@ public class LocalConfigHolder {
 	private Map<String, String> props = null;
 	private Map<String, Map<String, String>> namespacedProps = new HashMap<String, Map<String, String>>();
 	
-	private static LocalConfigHolder instance;
+	private volatile static LocalConfigHolder instance;
 	
 	public static LocalConfigHolder getInstance() {
 		if (instance == null) {

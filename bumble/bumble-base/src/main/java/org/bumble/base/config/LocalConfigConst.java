@@ -12,6 +12,7 @@ public interface LocalConfigConst {
 		public static final String NS = "bumble.basic";
 		public static final String NAME = NS + ".name";
 		public static final String UNIQ_NAME = NS + ".uniqName";
+		public static final String VERSION = NS + ".version";
 	}
 	
 	// Bumble Manager Server

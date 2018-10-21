@@ -5,6 +5,8 @@ import java.io.InputStream;
 
 import org.bumble.base.BumbleNameBuilder;
 import org.bumble.base.Callback;
+import org.bumble.base.config.LocalConfigConst;
+import org.bumble.base.config.LocalConfigHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +32,9 @@ public class BumbleLogoPrinter {
 			
 			String uniqName = BumbleNameBuilder.getInstance().getUniqName();
 			logoStr = logoStr.replace("{{name}}", uniqName);
+			
+			String version = LocalConfigHolder.getInstance().getConfig(LocalConfigConst.Basic.VERSION);
+			logoStr = logoStr.replace("{{version}}", version);
 			
 			if (replacementCallback != null) {
 				logoStr = (String) replacementCallback.doCallback(logoStr);

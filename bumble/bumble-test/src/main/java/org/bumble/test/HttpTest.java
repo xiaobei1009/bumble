@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.bumble.base.test.BumbleTest;
-import org.bumble.utils.HttpUtil;
+import org.bumble.test.util.HttpUtil;
 
 public class HttpTest extends BumbleTest {
 

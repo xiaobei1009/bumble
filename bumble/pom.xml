@@ -34,7 +34,8 @@
 		<module>bumble-eureka-server</module>
 		<module>bumble-springcloud-demo1</module>
 		<module>bumble-springcloud-demo2</module>
-	</modules>
+        <module>bumble-agent</module>
+    </modules>
 	
 	<dependencyManagement>
 		<dependencies>

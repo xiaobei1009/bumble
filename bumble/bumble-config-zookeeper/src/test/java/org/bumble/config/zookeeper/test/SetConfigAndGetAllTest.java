@@ -32,7 +32,7 @@ public class SetConfigAndGetAllTest {
         configurator.setConfig(new String[] {
     		ConfigCenterConst.Registry.NS,
     		ConfigCenterConst.Registry.ADDRESS
-    	}, "10.1.44.150:2181");
+    	}, "172.16.10.21:2181");
         
         configurator.setConfig(new String[] {
 			ConfigCenterConst.Registry.NS,

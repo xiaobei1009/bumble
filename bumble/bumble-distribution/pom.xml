@@ -37,7 +37,7 @@
                 </dependency>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>bumble-store-redis</artifactId>
+                    <artifactId>bumble-store-dummy</artifactId>
                 </dependency>
             </dependencies>
 

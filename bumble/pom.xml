@@ -23,6 +23,7 @@
 		<module>bumble-config-zookeeper</module>
 		<module>bumble-registry-zookeeper</module>
 		<module>bumble-store-redis</module>
+		<module>bumble-store-dummy</module>
 		<module>bumble-manager</module>
 		<module>bumble-admin</module>
 		
@@ -76,6 +77,11 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>bumble-store-redis</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>bumble-store-dummy</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

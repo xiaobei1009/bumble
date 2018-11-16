@@ -55,7 +55,9 @@ public class BumbleConnection implements Connection {
 	}
 
 	public PreparedStatement prepareStatement(String sql) throws SQLException {
-		return connection.prepareStatement(sql);
+		PreparedStatement ps = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+		BumblePreparedStatement bps = new BumblePreparedStatement(ps, sql);
+		return bps;
 	}
 
 	public CallableStatement prepareCall(String sql) throws SQLException {

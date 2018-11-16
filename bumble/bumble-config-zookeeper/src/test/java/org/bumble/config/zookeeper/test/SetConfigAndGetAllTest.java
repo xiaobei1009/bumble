@@ -84,13 +84,13 @@ public class SetConfigAndGetAllTest {
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,
     		ConfigCenterConst.BumbleClient.ENABLE_BUMBLE,
-    		"C10.18.5.110-demo1",
+    		"C172.16.10.21-demo1",
     	}, BasicConst.YES);
         
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,
     		ConfigCenterConst.BumbleClient.ENABLE_BUMBLE,
-    		"C10.18.5.110-demo2",
+    		"C172.16.10.21-demo2",
     	}, BasicConst.YES);
         
         // Core

@@ -13,6 +13,7 @@ import org.bumble.core.remoting.client.RemotingTransporterClientFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// TODO try to terminate the zk connection, test on sh invocation
 public class Shutdown {
 	
 	public static void main(String[] args) throws Exception {

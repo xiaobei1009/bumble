@@ -94,7 +94,7 @@ fi
 
 if [ -z "$REPO" ]
 then
-  REPO="$BASEDIR"/repo
+  REPO="$BASEDIR"/lib
 fi
 
 CLASSPATH="$BASEDIR"/etc:"$REPO"/*

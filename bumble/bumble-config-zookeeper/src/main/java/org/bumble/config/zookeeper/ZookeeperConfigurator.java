@@ -110,7 +110,11 @@ public class ZookeeperConfigurator extends AbstractConfigurator {
 		String ret = jsnObj.toJSONString();
 		return ret;
 	}
-	
+
+	public void shutdown() {
+		zkClient.close();
+	}
+
 	@SuppressWarnings("unchecked")
 	private <T extends Object> T getSubsequentConfigAndWatch(String path, final ConfigChangedNotifier notifier) {
 		Object jsnObj = new JSONObject();

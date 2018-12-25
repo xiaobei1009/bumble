@@ -4,8 +4,10 @@ import org.bumble.base.Callback;
 import org.bumble.base.config.LocalConfigConst;
 import org.bumble.base.config.LocalConfigHolder;
 import org.bumble.base.log.LogInitializer;
+import org.bumble.config.ConfiguratorFactory;
 import org.bumble.core.BumbleLogoPrinter;
 import org.bumble.core.ShutdownWorker;
+import org.bumble.core.thread.ThreadExecutorGenerator;
 import org.bumble.manager.remoting.RemotingTransporterFactory4BMngr;
 import org.bumble.registry.RegistryFactory;
 import org.slf4j.Logger;
@@ -64,7 +66,14 @@ public class BumbleManager {
 	
 	public void shutdown() throws Exception {
 		logger.info("Bumble Manager is closing...\n");
+
 		transporterFactory.shutdown();
+
+		ConfiguratorFactory.getConfigurator().shutdown();
+		ThreadExecutorGenerator.getInstance().getExecutor().shutdown();
+
 		logger.info( "Bumble Manager is closed!" );
+
+		System.exit(0);
 	}
 }

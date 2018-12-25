@@ -9,5 +9,5 @@ public interface ConfigChangedNotifier {
 	 * @param key
 	 * @param value
 	 */
-	public void doNotify(String key, String value);
+	void doNotify(String key, String value);
 }

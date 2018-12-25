@@ -32,7 +32,7 @@ public class SetConfigAndGetAllTest {
         configurator.setConfig(new String[] {
     		ConfigCenterConst.Registry.NS,
     		ConfigCenterConst.Registry.ADDRESS
-    	}, "172.16.10.176:2181");
+    	}, "172.16.10.91:2181");
         
         configurator.setConfig(new String[] {
 			ConfigCenterConst.Registry.NS,
@@ -84,13 +84,13 @@ public class SetConfigAndGetAllTest {
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,
     		ConfigCenterConst.BumbleClient.ENABLE_BUMBLE,
-    		"C172.16.10.21-demo1",
+    		"C172.16.10.91-demo1",
     	}, BasicConst.YES);
         
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,
     		ConfigCenterConst.BumbleClient.ENABLE_BUMBLE,
-    		"C172.16.10.21-demo2",
+    		"C172.16.10.91-demo2",
     	}, BasicConst.YES);
         
         // Core

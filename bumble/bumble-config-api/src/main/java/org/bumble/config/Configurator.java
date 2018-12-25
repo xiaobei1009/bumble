@@ -4,9 +4,9 @@ import java.util.Map;
 
 public interface Configurator {
 	
-	public final String ROOT = "root";
+	String ROOT = "root";
 	
-	public final String CONFIG_NS = "bumble.config";
+	String CONFIG_NS = "bumble.config";
 	
 	/**
 	 * Set value for a configuration key chain
@@ -14,7 +14,7 @@ public interface Configurator {
 	 * @param keyChain
 	 * @param value
 	 */
-	public void setConfig(String[] keyChain, String value);
+	void setConfig(String[] keyChain, String value);
 	
 	/**
 	 * Set value for a configuration key chain if it does not exist
@@ -22,7 +22,7 @@ public interface Configurator {
 	 * @param keyChain
 	 * @param value
 	 */
-	public void setConfigIfNotExist(String[] keyChain, String value);
+	void setConfigIfNotExist(String[] keyChain, String value);
 	
 	/**
 	 * Judge if a configuration exists
@@ -30,38 +30,39 @@ public interface Configurator {
 	 * @param keyChain
 	 * @return
 	 */
-	public boolean configExists(String[] keyChain);
+	boolean configExists(String[] keyChain);
 	
 	/**
 	 * Get a value of a configuration key chain
 	 * 
-	 * @param key
+	 * @param keyChain
 	 * @return
 	 */
-	public String getConfig(String[] keyChain);
+	String getConfig(String[] keyChain);
 	
 	/**
 	 * Get a value of a configuration key chain
 	 * and watch on this configuration for changes
 	 * 
-	 * @param key
+	 * @param keyChain
+	 * @param notifier
 	 * @return
 	 */
-	public String getConfig(String[] keyChain, ConfigChangedNotifier notifier);
+	String getConfig(String[] keyChain, ConfigChangedNotifier notifier);
 	
 	/**
 	 * Override all the configuration by a json string
 	 * 
 	 * @param json
 	 */
-	public void setAllConfig(String json);
+	void setAllConfig(String json);
 	
 	/**
 	 * get all the configuration
 	 * 
 	 * @return
 	 */
-	public String getAllConfig();
+	String getAllConfig();
 	
 	/**
 	 * Get all the configuration
@@ -70,23 +71,23 @@ public interface Configurator {
 	 * @param notifier
 	 * @return
 	 */
-	public String getAllConfig(ConfigChangedNotifier notifier);
+	String getAllConfig(ConfigChangedNotifier notifier);
 	
 	/**
 	 * Clear all the configuration
 	 * 
 	 */
-	public void clear();
+	void clear();
 	
 	/**
 	 * Watch on a configuration key chain
 	 * the callback will be notified if the 
 	 * corresponding configuration value is changed
 	 * 
-	 * @param key
+	 * @param keyChain
 	 * @param notifier
 	 */
-	public void watchOnConfig(String[] keyChain, ConfigChangedNotifier notifier);
+	void watchOnConfig(String[] keyChain, ConfigChangedNotifier notifier);
 	
 	/**
 	 * Get subsequent configuration and watch
@@ -95,14 +96,20 @@ public interface Configurator {
 	 * @param notifier
 	 * @return
 	 */
-	public String getSubsequentConfigAndWatch(String[] keyChain, ConfigChangedNotifier notifier);
+	String getSubsequentConfigAndWatch(String[] keyChain, ConfigChangedNotifier notifier);
 	
 	/**
 	 * Get name spaced configuration map
 	 * 
-	 * @param namespace
+	 * @param keyChain
 	 * @param notifier
 	 * @return
 	 */
-	public Map<String, String> getNamespacedConfig(String[] keyChain, ConfigChangedNotifier notifier);
+	Map<String, String> getNamespacedConfig(String[] keyChain, ConfigChangedNotifier notifier);
+
+	/**
+	 * Shutdown the configurator client
+	 *
+	 */
+	void shutdown();
 }

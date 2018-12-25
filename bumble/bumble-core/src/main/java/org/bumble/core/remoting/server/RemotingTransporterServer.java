@@ -62,6 +62,7 @@ public class RemotingTransporterServer extends RemotingTransporter
 	
 	public void close() {
 		try {
+			isStarted = false;
 			serverChannel.close();
 			logger.info("Server Socket closed on port: " + port);
 		} catch (IOException e) {
@@ -78,7 +79,7 @@ public class RemotingTransporterServer extends RemotingTransporter
 		threadPool.execute(new Runnable() {
 			public void run() {
 				try {
-					while (true) {
+					while (isStarted) {
 			            selector.select();
 			            
 			            Iterator<SelectionKey> ite = selector.selectedKeys().iterator();

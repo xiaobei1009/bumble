@@ -50,5 +50,7 @@ public class Shutdown {
 		client.sendMsg(shutdownMsg);
 		
 		client.close();
+
+		System.exit(0);
 	}
 }

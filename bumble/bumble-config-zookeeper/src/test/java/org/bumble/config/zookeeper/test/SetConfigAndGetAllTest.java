@@ -79,7 +79,7 @@ public class SetConfigAndGetAllTest {
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,
     		ConfigCenterConst.BumbleClient.THREAD_POOL_SIZE,
-    	}, "100");
+    	}, "3");
         
         configurator.setConfig(new String[] {
     		ConfigCenterConst.BumbleClient.NS,

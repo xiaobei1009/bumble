@@ -15,7 +15,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * Hello world!
  *
  */
-@EnableAutoConfiguration
 @SpringBootApplication
 @MapperScan({"org.bumble.demo.dao"})
 @ServletComponentScan

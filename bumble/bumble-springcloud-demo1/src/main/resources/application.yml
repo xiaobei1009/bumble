@@ -47,12 +47,12 @@ info:
 eureka:
   instance:
     appname: demo1
-    hostname: 10.18.5.110
+    hostname: localhost
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
   client:
     serviceUrl:
-      defaultZone: http://172.16.10.21:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     registerWithEureka: true
     fetchRegistry: true
     

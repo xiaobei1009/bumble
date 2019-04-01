@@ -17,5 +17,5 @@ public interface ActionService {
 	 * @param channel
 	 * @param param
 	 */
-	public void execute(Action action, SocketChannel channel, Object... param);
+	void execute(Action action, SocketChannel channel, Object... param);
 }

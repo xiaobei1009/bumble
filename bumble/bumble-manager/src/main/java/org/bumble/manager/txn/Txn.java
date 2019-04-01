@@ -7,19 +7,19 @@ import com.alibaba.fastjson.JSONObject;
 public class Txn {
 	public interface State {
 		// Transaction is initialized
-		public static final String INIT = "init";
+		String INIT = "init";
 		
 		// Transaction is committed successfully
-		public static final String SUCCESS = "success";
+		String SUCCESS = "success";
 		
 		// Transaction commit failed
-		public static final String FAIL = "failed";
+		String FAIL = "failed";
 		
 		// Transaction 2nd phase commit successfully
-		public static final String SUCCESS_2PHASE ="success-second-phase";
+		String SUCCESS_2PHASE ="success-second-phase";
 		
 		// Transaction 2nd phase commit failed
-		public static final String FAIL_2PHASE = "fail-second-phase";
+		String FAIL_2PHASE = "fail-second-phase";
 	}
 	public Txn(String clientName, String clientUniqName, String txnId) {
 		this.clientName = clientName;

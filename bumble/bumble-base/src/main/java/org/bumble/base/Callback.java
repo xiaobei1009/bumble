@@ -12,5 +12,5 @@ public interface Callback {
 	 * <p>
 	 * @param params
 	 */
-	public Object doCallback(Object... params);
+	Object doCallback(Object... params);
 }

@@ -9,5 +9,5 @@ public interface RegistryChangedNotifier {
 	 * 
 	 * @param registryData
 	 */
-	public void doNotify(RegistryData registryData);
+	void doNotify(RegistryData registryData);
 }

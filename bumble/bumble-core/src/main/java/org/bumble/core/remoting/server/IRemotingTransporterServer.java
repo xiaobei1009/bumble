@@ -12,27 +12,27 @@ public interface IRemotingTransporterServer {
 	 * 
 	 * @throws Exception
 	 */
-	public void start() throws Exception;
+	void start() throws Exception;
 	
 	/**
 	 * Stop the server
 	 * 
 	 */
-	public void close();
+	void close();
 	
 	/**
 	 * Update the last available time stamp for connected bumble clients
 	 * 
 	 * @param url
 	 */
-	public void updateLastAvailableTimestamp4ClientConnected(String url);
+	void updateLastAvailableTimestamp4ClientConnected(String url);
 	
 	/**
 	 * Get connected bumble clients to server
 	 * 
 	 * @return
 	 */
-	public Map<String, Node> getClientsConnectedToServer();
+	Map<String, Node> getClientsConnectedToServer();
 	
 	/**
 	 * Update the channel for a connected client
@@ -40,7 +40,7 @@ public interface IRemotingTransporterServer {
 	 * @param clientName
 	 * @param channel
 	 */
-	public void updateClientChannel(String clientName, SocketChannel channel);
+	void updateClientChannel(String clientName, SocketChannel channel);
 	
 	/**
 	 * Send message to client
@@ -48,5 +48,5 @@ public interface IRemotingTransporterServer {
 	 * @param clientName
 	 * @param msg
 	 */
-	public void sendMsgToClient(String clientName, String msg);
+	void sendMsgToClient(String clientName, String msg);
 }

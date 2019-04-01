@@ -11,18 +11,18 @@ public interface IRemotingTransporterFactory4BClient {
 	 * Connect to a Bumble Manager
 	 * <p>
 	 */
-	public void connectToManager();
+	void connectToManager();
 	
 	/**
 	 * Indicate if the client is connected to a bumble manager
 	 * <p>
 	 * @return
 	 */
-	public Boolean isConnected();
+	Boolean isConnected();
 	
 	/**
 	 * Get connected bumble manager unique name
 	 * @return
 	 */
-	public String getManagerUniqName();
+	String getManagerUniqName();
 }

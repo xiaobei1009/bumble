@@ -8,35 +8,35 @@ public interface IRemotingTransporterFactory {
 	 * Start the transporter factory
 	 * @throws Exception
 	 */
-	public void start() throws Exception;
+	void start() throws Exception;
 	
 	/**
 	 * Restart the transporter factory
 	 * @throws Exception
 	 */
-	public void restart() throws Exception;
+	void restart() throws Exception;
 	
 	/**
 	 * Close the transporter factory
 	 */
-	public void close();
+	void close();
 	
 	/**
 	 * Close a transporter client
 	 * 
 	 * @param client
 	 */
-	public void closeTransporterClient(IRemotingTransporterClient client);
+	void closeTransporterClient(IRemotingTransporterClient client);
 	
 	/**
 	 * Do something after registry changed
 	 */
-	public void doAfterRegistryChange(RegistryData registryData);
+	void doAfterRegistryChange(RegistryData registryData);
 	
 	/**
 	 * Get unique name
 	 * @return
 	 */
-	public String getUniqName();
+	String getUniqName();
 	
 }

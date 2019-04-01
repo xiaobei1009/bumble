@@ -25,19 +25,19 @@ import org.bumble.registry.data.RegistryData;
  */
 public interface Registry {
 	
-	public final String CONFIG_NS = "bumble.registry";
+	String CONFIG_NS = "bumble.registry";
 	
 	/**
 	 * Get registry data
 	 * 
 	 * @return RegistryData
 	 */
-	public RegistryData getData();
+	RegistryData getData();
 	
 	/**
 	 * Clear all the data
 	 */
-	public void clear();
+	void clear();
 	
 	/**
 	 * Register a transaction manager to the registry
@@ -48,13 +48,13 @@ public interface Registry {
 	 * The port will be retrieved from bumble-config file under specific key[bumble.manager.server.port]<br>
 	 * 
 	 */
-	public void register();
+	void register();
 	
 	/**
 	 * Register a transaction manager to the registry
 	 * <p>
 	 */
-	public void register(String mngrName, String mngrUrl);
+	void register(String mngrName, String mngrUrl);
 	
 	/**
 	 * Unregister a transaction manager in the registry
@@ -64,7 +64,7 @@ public interface Registry {
 	 * 
 	 * @param name
 	 */
-	public void unregister(String name);
+	void unregister(String name);
 	
 	/**
 	 * Get an eligible transaction manager for a client 
@@ -75,7 +75,7 @@ public interface Registry {
 	 * 
 	 * @return MngrNode(manager name)
 	 */
-	public MngrNode getMngr4Client();
+	MngrNode getMngr4Client();
 	
 	/**
 	 * <pre>
@@ -85,7 +85,7 @@ public interface Registry {
 	 * @return {@link org.bumble.registry.data.MngrNode}
 	 * @see org.bumble.registry.Registry#getMngr4Client
 	 */
-	public MngrNode getMngr4Client(List<String> exceptNameList);
+	MngrNode getMngr4Client(List<String> exceptNameList);
 	
 	/**
 	 * Bind a client module to a transaction manager
@@ -94,7 +94,7 @@ public interface Registry {
 	 * 
 	 * @param mngrName
 	 */
-	public void bindClientToManager(String mngrName);
+	void bindClientToManager(String mngrName);
 	
 	/**
 	 * Bind a client module to a transaction manager
@@ -103,7 +103,7 @@ public interface Registry {
 	 * @param clientUrl
 	 * @param mngrName
 	 */
-	public void bindClientToManager(String clientName, String clientUrl, String mngrName);
+	void bindClientToManager(String clientName, String clientUrl, String mngrName);
 	
 	/**
 	 * <pre>
@@ -112,10 +112,10 @@ public interface Registry {
 	 * 1. It will be called by the client module if it found that the transaction manager is dead
 	 * 2. It will be called by the transaction manager if it found that the client module is dead
 	 * <pre>
-	 * @param clientUuid
-	 * @param mngrUrl
+	 * @param clientName
+	 * @param mngrName
 	 */
-	public void unbindClientFromManager(String clientName, String mngrName);
+	void unbindClientFromManager(String clientName, String mngrName);
 	
 	/**
 	 * <pre>
@@ -126,7 +126,7 @@ public interface Registry {
 	 * </pre>
 	 * @param registryData
 	 */
-	public void reload(RegistryData registryData);
+	void reload(RegistryData registryData);
 	
 	/**
 	 * <pre>
@@ -135,10 +135,10 @@ public interface Registry {
 	 * </pre>
 	 * @param registryChangedNotifier
 	 */
-	public void watchOnRegistry(RegistryChangedNotifier registryChangedNotifier);
+	void watchOnRegistry(RegistryChangedNotifier registryChangedNotifier);
 	
 	/**
 	 * Exit
 	 */
-	public void exit();
+	void exit();
 }

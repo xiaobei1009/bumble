@@ -16,5 +16,5 @@ public interface TransactionInterceptor {
 	 * @return
 	 * @throws Throwable
 	 */
-	public Object intercept(ProceedingJoinPoint point) throws Throwable;
+	Object intercept(ProceedingJoinPoint point) throws Throwable;
 }

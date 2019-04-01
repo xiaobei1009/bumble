@@ -1,7 +1,5 @@
 package org.bumble.base.model;
 
-import org.bumble.base.model.URL;
-
 public class Node extends URL {
 	public Node() {}
 	public Node(String name, URL url) {
